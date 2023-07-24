@@ -17,7 +17,7 @@ final class DumbShippingService implements ShippingServiceInterface
     public function __construct()
     {
     }
-
+    
     /**
      * @inheritDoc
      * @throws LogicException
@@ -26,8 +26,8 @@ final class DumbShippingService implements ShippingServiceInterface
     {
         $order->load();
         if (!isset($order->data["tracking_number"])) {
-			throw new LogicException("type invalid");
-		}
-		return $order->data["tracking_number"];
-	}
+            throw new LogicException("type invalid");
+        }
+        return $order->data["tracking_number"];
+    }
 }
